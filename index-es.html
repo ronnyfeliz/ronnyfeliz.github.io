@@ -1,1203 +1,594 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ronny Feliz — Ingeniero de Sistemas | Portafolio</title>
+<meta name="description" content="Ronny Feliz — Ingeniería en Sistemas student at UASD, freelance digital specialist and community builder from Dominican Republic."/>
+<meta name="keywords" content="Ronny Feliz, Systems Engineer, Dominican Republic, Web Developer, Portfolio, UASD"/>
+<meta name="author" content="Ronny Feliz"/>
+<link rel="canonical" href="https://ronnyfeliz.github.io/"/>
+<meta property="og:title" content="Ronny Feliz — Systems Engineer"/>
+<meta property="og:image" content="Pictures/Ronny Feliz Portrait 2.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@Swae05"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#080b12;--bg2:#0d1120;--bg3:#121929;
+  --surface:#161e2e;--surface2:#1c2740;
+  --gold:#c9a84c;--gold2:#e8c97a;
+  --gdim:rgba(201,168,76,.12);--gglow:rgba(201,168,76,.22);
+  --txt:#e8e6df;--muted:#7a8099;
+  --bdr:rgba(255,255,255,.07);--bdrg:rgba(201,168,76,.22);
+  --r:10px;
+  --fd:'Cormorant Garamond',serif;
+  --fb:'DM Sans',sans-serif;
+  --fm:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--txt);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
 
-  <!-- SEO -->
-  <title>Ronny Feliz — Ingeniero de Sistemas | Portafolio Digital</title>
-  <meta name="description" content="Ronny Feliz — Estudiante de Ingeniería en Sistemas en la UASD, especialista digital freelance, líder de comunidad y creador de contenido desde Baní, República Dominicana."/>
-  <meta name="keywords" content="Ronny Feliz, Systems Engineer, Dominican Republic, Web Developer, Comunidad Manager, Freelance, Digital Portfolio, UASD"/>
-  <meta name="author" content="Ronny Feliz"/>
-  <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://ronnyfeliz.github.io/"/>
+/* scroll progress */
+#sp{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0;z-index:9999}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="profile"/>
-  <meta property="og:url" content="https://ronnyfeliz.github.io/"/>
-  <meta property="og:title" content="Ronny Feliz — Systems Engineer & Digital Specialist"/>
-  <meta property="og:description" content="Portfolio of Ronny Feliz — Ingeniería en Sistemas student, freelance digital specialist and community builder from the Dominican Republic."/>
-  <meta property="og:image" content="Pictures/Ronny Feliz Portrait 2.png"/>
-  <meta property="og:locale" content="en_US"/>
+/* lang switch */
+.lang{position:fixed;top:18px;right:22px;z-index:9998}
+.lang a{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid var(--bdrg);padding:7px 14px;border-radius:20px;transition:.2s}
+.lang a:hover{background:rgba(201,168,76,.2)}
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@Swae05"/>
-  <meta name="twitter:title" content="Ronny Feliz — Systems Engineer"/>
-  <meta name="twitter:description" content="Portfolio of Ronny Feliz — Ingeniería en Sistemas student and freelance digital specialist from Dominican Republic."/>
-  <meta name="twitter:image" content="Pictures/Ronny Feliz Portrait 2.png"/>
+/* layout */
+.w{max-width:1100px;margin:0 auto;padding:0 24px}
+.sec{padding:88px 0}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.18}
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ronny Feliz",
-    "jobTitle": "Systems Engineer Student",
-    "url": "https://ronnyfeliz.github.io",
-    "email": "blxst608@gmail.com",
-    "telephone": "+1-809-454-8891",
-    "address": { "@type": "PostalAddress", "addressLocality": "Bani", "addressRegion": "Peravia", "addressCountry": "DO" },
-    "sameAs": [
-      "https://www.linkedin.com/in/ronnyfeliz2/",
-      "https://github.com/ronnyfeliz",
-      "https://x.com/Swae05",
-      "https://www.instagram.com/blxst_608/",
-      "https://www.facebook.com/bauer.rodriguez.5/"
-    ]
-  }
-  </script>
+/* shared */
+.ey{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.ey::after{content:'';flex:1;height:1px;background:var(--bdrg);max-width:52px}
+.h2{font-family:var(--fd);font-size:clamp(30px,4vw,46px);font-weight:500;color:#fff;letter-spacing:-.5px;line-height:1.1;margin-bottom:6px}
+.h2 span{color:var(--gold)}
+.sub{font-size:15px;color:var(--muted);margin-bottom:48px}
+.btn-g{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#080b12;font-family:var(--fm);font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:12px 24px;border-radius:var(--r);border:none;box-shadow:0 4px 18px var(--gglow);transition:.2s}
+.btn-g:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-o{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--txt);font-family:var(--fm);font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:11px 22px;border-radius:var(--r);border:1.5px solid var(--bdr);transition:.2s}
+.btn-o:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.tag{font-family:var(--fm);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--bg3);border:1px solid var(--bdr);padding:3px 8px;border-radius:4px}
 
-  <link rel="icon" type="image/png" href="Pictures/Ronny Feliz Portrait 2.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.rv.rl{transform:translateX(-24px)}
+.rv.rr{transform:translateX(24px)}
+.rv.rz{transform:scale(.93)}
+.rv.go{opacity:1;transform:none}
 
-  <style>
-    /* ── VARIABLES ── */
-    :root {
-      --bg:       #080b12;
-      --bg2:      #0d1120;
-      --bg3:      #121929;
-      --surface:  #161e2e;
-      --surface2: #1c2740;
-      --gold:     #c9a84c;
-      --gold2:    #e8c97a;
-      --gold-dim: rgba(201,168,76,.15);
-      --gold-glow:rgba(201,168,76,.25);
-      --text:     #e8e6df;
-      --muted:    #7a8099;
-      --border:   rgba(255,255,255,.06);
-      --border-g: rgba(201,168,76,.2);
-      --r:        10px;
-      --t:        .25s cubic-bezier(.4,0,.2,1);
-      --font-disp:'Cormorant Garamond', serif;
-      --font-body:'DM Sans', sans-serif;
-      --font-mono:'DM Mono', monospace;
-    }
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,.055) 0%,transparent 65%);pointer-events:none}
+.hgrid{display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;width:100%}
+.hey{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hey::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hname{font-family:var(--fd);font-size:clamp(52px,7vw,86px);font-weight:600;letter-spacing:-1px;color:#fff;line-height:.95;margin-bottom:14px}
+.hname span{color:var(--gold)}
+.hrole{font-family:var(--fm);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.hdesc{font-size:16px;color:rgba(232,230,223,.75);line-height:1.8;max-width:500px;margin-bottom:32px}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap}
+.hsoc{display:flex;gap:10px;margin-top:26px}
+.sb{width:38px;height:38px;border-radius:8px;background:var(--surface);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s}
+.sb:hover{background:var(--gdim);border-color:var(--bdrg);color:var(--gold);transform:translateY(-2px)}
+.pimg{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4}
+.pimg img{width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(12%);transition:filter .5s}
+.pimg:hover img{filter:grayscale(0%)}
+.pimg::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,11,18,.88) 0%,transparent 50%);z-index:1}
+.pring{position:absolute;inset:-3px;border-radius:18px;border:1.5px solid var(--bdrg);pointer-events:none;z-index:2}
+.ptags{position:absolute;bottom:18px;left:14px;right:14px;z-index:3;display:flex;gap:6px;flex-wrap:wrap}
+.ptag{font-family:var(--fm);font-size:10px;letter-spacing:1px;text-transform:uppercase;background:rgba(201,168,76,.14);color:var(--gold);border:1px solid var(--bdrg);padding:4px 10px;border-radius:20px}
 
-    /* ── RESET ── */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{font-size:16px;scroll-behavior:smooth}
-    body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-text-size-adjust:100%}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    ul{list-style:none}
-    button{cursor:pointer;font-family:inherit}
-    ::-webkit-scrollbar{width:4px}
-    ::-webkit-scrollbar-track{background:var(--bg)}
-    ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+/* ABOUT */
+.agrid{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start}
+.ap{font-size:15.5px;color:rgba(232,230,223,.8);line-height:1.82;margin-bottom:20px}
+.ap strong{color:#fff}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.scard{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:16px;transition:.2s}
+.scard:hover{border-color:var(--bdrg);transform:translateY(-2px)}
+.snum{font-family:var(--fd);font-size:34px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:3px}
+.slbl{font-size:11px;color:var(--muted)}
+.icard{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden}
+.ichead{background:linear-gradient(135deg,var(--surface2),var(--surface));border-bottom:1px solid var(--bdr);padding:18px 20px;display:flex;align-items:center;gap:10px}
+.ichead span{font-family:var(--fd);font-size:18px;font-weight:500;color:#fff}
+.irow{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--bdr);transition:.2s}
+.irow:last-child{border-bottom:none}
+.irow:hover{background:rgba(201,168,76,.035)}
+.iico{width:32px;height:32px;flex-shrink:0;background:var(--gdim);border:1px solid var(--bdrg);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.ilbl{font-size:10px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+.ival{font-size:13.5px;color:var(--txt)}
+a.ival:hover{color:var(--gold)}
 
-    /* ── NOISE OVERLAY ── */
-    body::before{
-      content:'';position:fixed;inset:0;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events:none;z-index:9999;opacity:.4;
-    }
+/* TIMELINE */
+.tline{display:flex;flex-direction:column;position:relative}
+.tline::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--gold),transparent);opacity:.28}
+.titem{display:grid;grid-template-columns:40px 1fr;gap:22px;padding-bottom:28px}
+.titem:last-child{padding-bottom:0}
+.tdot{width:40px;height:40px;flex-shrink:0;background:var(--surface);border:2px solid var(--bdrg);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);position:relative;z-index:1;transition:.2s}
+.titem:hover .tdot{background:var(--gdim);border-color:var(--gold)}
+.tbox{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:20px 22px;transition:.2s}
+.titem:hover .tbox{border-color:var(--bdrg);transform:translateX(4px)}
+.tper{font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.trole{font-family:var(--fd);font-size:20px;font-weight:500;color:#fff;margin-bottom:2px}
+.tco{font-size:13px;color:var(--muted);margin-bottom:12px}
+.tblist{display:flex;flex-direction:column;gap:5px}
+.tbul{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:rgba(232,230,223,.75);line-height:1.5}
+.tbul::before{content:'';display:block;width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px}
+.ttags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
 
-    /* ── LANG SWITCHER ── */
-    .lang-switch{
-      position:fixed;top:20px;right:24px;z-index:1000;
-    }
-    .lang-switch a{
-      display:inline-flex;align-items:center;gap:6px;
-      font-family:var(--font-mono);font-size:11px;font-weight:500;
-      letter-spacing:1.5px;text-transform:uppercase;
-      color:var(--gold);background:rgba(201,168,76,.1);
-      border:1px solid var(--border-g);padding:7px 14px;border-radius:20px;
-      transition:background var(--t),transform var(--t);
-    }
-    .lang-switch a:hover{background:rgba(201,168,76,.2);transform:translateY(-1px)}
+/* PROJECTS */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pcard{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;transition:.25s}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .32s}
+.pcard:hover::before{transform:scaleX(1)}
+.pcard:hover{border-color:var(--bdrg);transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,.38)}
+.pico{width:42px;height:42px;background:var(--gdim);border:1px solid var(--bdrg);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.ptit{font-family:var(--fd);font-size:19px;font-weight:500;color:#fff}
+.psub{font-family:var(--fm);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:-6px}
+.pdesc{font-size:13px;color:rgba(232,230,223,.7);line-height:1.6;flex:1}
+.plink{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:4px;transition:gap .2s}
+.plink:hover{gap:9px}
 
-    /* ── CONTAINER ── */
-    .container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+/* SKILLS */
+.skgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.sklbl{font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.barlist{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.bartop{display:flex;justify-content:space-between;margin-bottom:6px}
+.barn{font-size:13px;font-weight:500;color:var(--txt)}
+.barp{font-family:var(--fm);font-size:12px;color:var(--gold)}
+.bartrack{height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.barfill{height:100%;background:linear-gradient(90deg,#a07830,var(--gold2));border-radius:2px;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.pills{display:flex;flex-wrap:wrap;gap:7px}
+.pill{font-family:var(--fm);font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);background:var(--surface);border:1px solid var(--bdr);padding:6px 13px;border-radius:20px;transition:.2s}
+.pill:hover{border-color:var(--bdrg);color:var(--gold);background:var(--gdim)}
+.langlist{display:flex;flex-direction:column;gap:9px}
+.langrow{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:12px 16px;transition:.2s}
+.langrow:hover{border-color:var(--bdrg)}
+.lflag{font-size:22px;width:32px;text-align:center}
+.lname{font-weight:500;color:#fff;font-size:14px;margin-bottom:1px}
+.llvl{font-family:var(--fm);font-size:10px;color:var(--gold);letter-spacing:1px;text-transform:uppercase}
+.lbar{flex:1;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-left:6px}
+.lfill{height:100%;background:var(--gold);border-radius:2px}
 
-    /* ══════════════════════════════
-       HERO
-    ══════════════════════════════ */
-    .hero{
-      min-height:100vh;display:flex;align-items:center;
-      position:relative;overflow:hidden;padding:100px 0 60px;
-    }
-    .hero-grid{
-      display:grid;grid-template-columns:1fr 420px;
-      gap:60px;align-items:center;width:100%;
-    }
+/* EDUCATION */
+.edgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.edcard{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;transition:.2s}
+.edcard:hover{border-color:var(--bdrg);transform:translateY(-2px)}
+.edcard.feat{border-color:var(--bdrg);background:linear-gradient(135deg,var(--surface2),var(--surface))}
+.edper{font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.edtit{font-family:var(--fd);font-size:18px;font-weight:500;color:#fff;margin-bottom:3px;line-height:1.2}
+.edpl{font-size:12.5px;color:var(--muted)}
 
-    /* Ambient glow */
-    .hero::before{
-      content:'';position:absolute;
-      top:-200px;right:-100px;
-      width:700px;height:700px;
-      background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 65%);
-      pointer-events:none;
-    }
-    .hero::after{
-      content:'';position:absolute;
-      bottom:-100px;left:-200px;
-      width:500px;height:500px;
-      background:radial-gradient(circle,rgba(30,136,243,.04) 0%,transparent 65%);
-      pointer-events:none;
-    }
+/* ACCORDION */
+.accwrap{display:flex;flex-direction:column;gap:7px;margin-top:40px}
+.accitem{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.accitem.open{border-color:var(--bdrg)}
+.accbtn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:none;border:none;cursor:pointer;transition:background .2s}
+.accbtn:hover{background:rgba(201,168,76,.04)}
+.accbtnl{display:flex;align-items:center;gap:12px}
+.accico{width:34px;height:34px;flex-shrink:0;background:var(--gdim);border:1px solid var(--bdrg);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.accname{font-family:var(--fd);font-size:18px;font-weight:500;color:#fff;text-align:left}
+.acccnt{font-family:var(--fm);font-size:10px;color:var(--gold);letter-spacing:1px;text-align:left;margin-top:1px}
+.accarr{color:var(--muted);flex-shrink:0;transition:transform .3s}
+.accitem.open .accarr{transform:rotate(180deg)}
+.accbody{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.accitem.open .accbody{max-height:2000px}
+.accinner{padding:0 20px 14px;border-top:1px solid var(--bdr)}
+.accrow{display:flex;align-items:baseline;gap:9px;padding:7px 2px;border-bottom:1px solid rgba(255,255,255,.025);font-size:13.5px;color:rgba(232,230,223,.78)}
+.accrow:last-child{border-bottom:none}
+.accdot{width:4px;height:4px;min-width:4px;background:var(--gold);border-radius:50%;opacity:.6;flex-shrink:0;margin-top:6px}
+.accrow span.acctxt{flex:1}
 
-    .hero-eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      font-family:var(--font-mono);font-size:11px;font-weight:500;
-      letter-spacing:3px;text-transform:uppercase;
-      color:var(--gold);margin-bottom:20px;
-    }
-    .hero-eyebrow::before{
-      content:'';display:block;width:28px;height:1px;background:var(--gold);
-    }
+/* CONTACT */
+.consec{background:var(--bg2);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+.congrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.conitems{display:flex;flex-direction:column;gap:10px}
+.conitem{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:13px 16px;transition:.2s}
+.conitem:hover{border-color:var(--bdrg);transform:translateX(4px)}
+.conico{width:36px;height:36px;flex-shrink:0;background:var(--gdim);border:1px solid var(--bdrg);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.conlbl{font-size:10px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+.conval{font-size:13.5px;color:var(--txt)}
+a.conval:hover{color:var(--gold)}
+.soclinks{display:flex;flex-direction:column;gap:9px}
+.soclink{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:13px 16px;transition:.2s}
+.soclink:hover{border-color:var(--bdrg);transform:translateX(4px);background:var(--gdim)}
+.socico{width:36px;height:36px;flex-shrink:0;border-radius:7px;display:flex;align-items:center;justify-content:center}
+.socname{font-size:13.5px;font-weight:500;color:var(--txt)}
+.sochandle{font-size:11.5px;color:var(--muted)}
+.socarr{margin-left:auto;color:var(--muted);transition:.2s}
+.soclink:hover .socarr{transform:translateX(4px);color:var(--gold)}
 
-    .hero-name{
-      font-family:var(--font-disp);
-      font-size:clamp(54px,7vw,88px);
-      font-weight:600;letter-spacing:-1px;
-      color:#fff;line-height:.95;
-      margin-bottom:16px;
-    }
-    .hero-name span{color:var(--gold)}
+footer{padding:32px 0;text-align:center;border-top:1px solid var(--bdr)}
+footer p{font-size:12.5px;color:var(--muted)}
+footer strong{color:var(--gold)}
+#bt{position:fixed;bottom:26px;right:26px;width:40px;height:40px;background:var(--gold);color:#080b12;border:none;border-radius:8px;display:flex;align-items:center;justify-content:center;z-index:990;opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s;box-shadow:0 4px 14px var(--gglow);cursor:pointer}
+#bt.on{opacity:1;pointer-events:auto;transform:none}
+#bt:hover{background:var(--gold2);transform:translateY(-3px)}
 
-    .hero-title{
-      font-family:var(--font-mono);font-size:13px;
-      letter-spacing:2px;text-transform:uppercase;
-      color:var(--muted);margin-bottom:28px;
-    }
-
-    .hero-desc{
-      font-size:16px;color:rgba(232,230,223,.75);
-      line-height:1.8;max-width:520px;margin-bottom:36px;
-    }
-
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-
-    .btn-gold{
-      display:inline-flex;align-items:center;gap:8px;
-      background:var(--gold);color:#080b12;
-      font-family:var(--font-mono);font-size:12px;font-weight:500;
-      letter-spacing:1.5px;text-transform:uppercase;
-      padding:12px 24px;border-radius:var(--r);border:none;
-      transition:background var(--t),transform var(--t),box-shadow var(--t);
-      box-shadow:0 4px 20px var(--gold-glow);
-    }
-    .btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 28px var(--gold-glow)}
-
-    .btn-outline{
-      display:inline-flex;align-items:center;gap:8px;
-      background:transparent;color:var(--text);
-      font-family:var(--font-mono);font-size:12px;font-weight:500;
-      letter-spacing:1.5px;text-transform:uppercase;
-      padding:11px 22px;border-radius:var(--r);
-      border:1.5px solid var(--border);
-      transition:border-color var(--t),color var(--t),transform var(--t);
-    }
-    .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-
-    /* Profile card */
-    .profile-card{
-      position:relative;
-    }
-    .profile-img-wrap{
-      position:relative;border-radius:16px;overflow:hidden;
-      aspect-ratio:3/4;
-    }
-    .profile-img-wrap img{
-      width:100%;height:100%;object-fit:cover;object-position:top;
-      filter:grayscale(15%);transition:filter .5s ease;
-    }
-    .profile-img-wrap:hover img{filter:grayscale(0%)}
-    .profile-img-wrap::before{
-      content:'';position:absolute;inset:0;
-      background:linear-gradient(to top,rgba(8,11,18,.9) 0%,transparent 50%);
-      z-index:1;
-    }
-    .profile-img-ring{
-      position:absolute;inset:-3px;border-radius:18px;
-      border:1.5px solid var(--border-g);pointer-events:none;z-index:2;
-    }
-
-    .profile-tags{
-      position:absolute;bottom:20px;left:16px;right:16px;z-index:3;
-      display:flex;gap:6px;flex-wrap:wrap;
-    }
-    .profile-tag{
-      font-family:var(--font-mono);font-size:10px;font-weight:500;
-      letter-spacing:1px;text-transform:uppercase;
-      background:rgba(201,168,76,.15);color:var(--gold);
-      border:1px solid var(--border-g);padding:4px 10px;border-radius:20px;
-    }
-
-    /* Social strip */
-    .hero-socials{
-      display:flex;gap:10px;margin-top:28px;
-    }
-    .hero-social{
-      width:38px;height:38px;border-radius:8px;
-      background:var(--surface);border:1px solid var(--border);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--muted);transition:all var(--t);
-    }
-    .hero-social:hover{background:var(--gold-dim);border-color:var(--border-g);color:var(--gold);transform:translateY(-2px)}
-
-    /* ══════════════════════════════
-       DIVIDER
-    ══════════════════════════════ */
-    .divider{
-      height:1px;
-      background:linear-gradient(90deg,transparent,var(--gold),transparent);
-      opacity:.2;margin:0;
-    }
-
-    /* ══════════════════════════════
-       SECTION SHARED
-    ══════════════════════════════ */
-    .section{padding:90px 0}
-    .section-eyebrow{
-      font-family:var(--font-mono);font-size:11px;font-weight:500;
-      letter-spacing:3px;text-transform:uppercase;color:var(--gold);
-      display:flex;align-items:center;gap:10px;margin-bottom:12px;
-    }
-    .section-eyebrow::after{content:'';flex:1;height:1px;background:var(--border-g);max-width:60px}
-    .section-title{
-      font-family:var(--font-disp);font-size:clamp(32px,4vw,48px);
-      font-weight:500;color:#fff;letter-spacing:-.5px;line-height:1.1;
-      margin-bottom:8px;
-    }
-    .section-title span{color:var(--gold)}
-    .section-sub{font-size:15px;color:var(--muted);margin-bottom:52px;line-height:1.65}
-
-    /* ══════════════════════════════
-       ABOUT
-    ══════════════════════════════ */
-    .about-grid{
-      display:grid;grid-template-columns:1fr 340px;
-      gap:60px;align-items:start;
-    }
-    .about-text{font-size:16px;color:rgba(232,230,223,.8);line-height:1.85;margin-bottom:28px}
-    .about-text strong{color:#fff}
-
-    .about-stats{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;
-    }
-    .about-stat{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);padding:18px 16px;
-      transition:border-color var(--t),transform var(--t);
-    }
-    .about-stat:hover{border-color:var(--border-g);transform:translateY(-2px)}
-    .about-stat-num{
-      font-family:var(--font-disp);font-size:36px;font-weight:600;
-      color:var(--gold);line-height:1;margin-bottom:4px;
-    }
-    .about-stat-label{font-size:12px;color:var(--muted);letter-spacing:.5px}
-
-    /* Info card */
-    .info-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);overflow:hidden;
-    }
-    .info-card-header{
-      background:linear-gradient(135deg,var(--surface2) 0%,var(--surface) 100%);
-      border-bottom:1px solid var(--border);
-      padding:20px;display:flex;align-items:center;gap:12px;
-    }
-    .info-card-title{font-family:var(--font-disp);font-size:20px;font-weight:500;color:#fff}
-    .info-items{padding:4px 0}
-    .info-item{
-      display:flex;align-items:center;gap:14px;
-      padding:14px 20px;border-bottom:1px solid var(--border);
-      transition:background var(--t);
-    }
-    .info-item:last-child{border-bottom:none}
-    .info-item:hover{background:rgba(201,168,76,.04)}
-    .info-icon{
-      width:34px;height:34px;flex-shrink:0;
-      background:var(--gold-dim);border:1px solid var(--border-g);
-      border-radius:8px;display:flex;align-items:center;justify-content:center;
-      color:var(--gold);
-    }
-    .info-label{font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
-    .info-val{font-size:14px;color:var(--text)}
-    a.info-val:hover{color:var(--gold)}
-
-    /* ══════════════════════════════
-       EXPERIENCE
-    ══════════════════════════════ */
-    .timeline{display:flex;flex-direction:column;gap:0;position:relative}
-    .timeline::before{
-      content:'';position:absolute;left:19px;top:8px;bottom:8px;
-      width:1px;background:linear-gradient(to bottom,var(--gold),transparent);
-      opacity:.3;
-    }
-    .timeline-item{
-      display:grid;grid-template-columns:40px 1fr;
-      gap:24px;padding-bottom:36px;
-    }
-    .timeline-item:last-child{padding-bottom:0}
-    .timeline-dot{
-      width:40px;height:40px;flex-shrink:0;
-      background:var(--surface);border:2px solid var(--border-g);
-      border-radius:50%;display:flex;align-items:center;justify-content:center;
-      color:var(--gold);position:relative;z-index:1;
-      transition:background var(--t),border-color var(--t);
-    }
-    .timeline-item:hover .timeline-dot{background:var(--gold-dim);border-color:var(--gold)}
-
-    .timeline-content{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);padding:22px 24px;
-      transition:border-color var(--t),transform var(--t);
-    }
-    .timeline-item:hover .timeline-content{border-color:var(--border-g);transform:translateX(4px)}
-
-    .timeline-period{
-      font-family:var(--font-mono);font-size:11px;letter-spacing:1px;
-      text-transform:uppercase;color:var(--gold);margin-bottom:6px;
-    }
-    .timeline-role{
-      font-family:var(--font-disp);font-size:20px;font-weight:500;color:#fff;
-      margin-bottom:2px;
-    }
-    .timeline-company{font-size:13px;color:var(--muted);margin-bottom:14px}
-    .timeline-bullets{display:flex;flex-direction:column;gap:6px}
-    .timeline-bullet{
-      display:flex;align-items:flex-start;gap:10px;
-      font-size:14px;color:rgba(232,230,223,.75);line-height:1.55;
-    }
-    .timeline-bullet::before{
-      content:'';display:block;width:4px;height:4px;
-      background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:7px;
-    }
-    .timeline-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
-    .timeline-tag{
-      font-family:var(--font-mono);font-size:10px;letter-spacing:1px;
-      text-transform:uppercase;color:var(--muted);
-      background:var(--bg3);border:1px solid var(--border);
-      padding:3px 9px;border-radius:4px;
-    }
-
-    /* ══════════════════════════════
-       PROJECTS
-    ══════════════════════════════ */
-    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .project-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);padding:24px;
-      display:flex;flex-direction:column;gap:12px;
-      transition:border-color var(--t),transform var(--t),box-shadow var(--t);
-      position:relative;overflow:hidden;
-    }
-    .project-card::before{
-      content:'';position:absolute;top:0;left:0;right:0;height:2px;
-      background:linear-gradient(90deg,var(--gold),transparent);
-      transform:scaleX(0);transform-origin:left;
-      transition:transform .35s ease;
-    }
-    .project-card:hover::before{transform:scaleX(1)}
-    .project-card:hover{
-      border-color:var(--border-g);transform:translateY(-5px);
-      box-shadow:0 16px 40px rgba(0,0,0,.4);
-    }
-    .project-icon{
-      width:44px;height:44px;background:var(--gold-dim);
-      border:1px solid var(--border-g);border-radius:10px;
-      display:flex;align-items:center;justify-content:center;color:var(--gold);
-    }
-    .project-title{font-family:var(--font-disp);font-size:20px;font-weight:500;color:#fff}
-    .project-sub{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:-6px}
-    .project-desc{font-size:13.5px;color:rgba(232,230,223,.7);line-height:1.65;flex:1}
-    .project-link{
-      display:inline-flex;align-items:center;gap:6px;
-      font-family:var(--font-mono);font-size:11px;letter-spacing:1px;
-      text-transform:uppercase;color:var(--gold);
-      margin-top:4px;transition:gap var(--t);
-    }
-    .project-link:hover{gap:10px}
-
-    /* ══════════════════════════════
-       SKILLS
-    ══════════════════════════════ */
-    .skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-    .skills-group-title{
-      font-family:var(--font-mono);font-size:11px;letter-spacing:2px;
-      text-transform:uppercase;color:var(--gold);margin-bottom:20px;
-    }
-    .skill-bars{display:flex;flex-direction:column;gap:16px;margin-bottom:32px}
-    .skill-bar-item{}
-    .skill-bar-top{display:flex;justify-content:space-between;margin-bottom:7px}
-    .skill-bar-label{font-size:13px;font-weight:500;color:var(--text);letter-spacing:.3px}
-    .skill-bar-pct{font-family:var(--font-mono);font-size:12px;color:var(--gold)}
-    .skill-bar-track{height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
-    .skill-bar-fill{
-      height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));
-      border-radius:2px;width:0%;
-      transition:width 1.4s cubic-bezier(.4,0,.2,1);
-    }
-    .skill-bar-fill.animated{width:var(--w)}
-
-    .skill-pills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill-pill{
-      font-family:var(--font-mono);font-size:11px;letter-spacing:.8px;
-      text-transform:uppercase;color:var(--muted);
-      background:var(--surface);border:1px solid var(--border);
-      padding:6px 14px;border-radius:20px;
-      transition:all var(--t);
-    }
-    .skill-pill:hover{border-color:var(--border-g);color:var(--gold);background:var(--gold-dim)}
-
-    /* Idiomas */
-    .lang-cards{display:flex;flex-direction:column;gap:10px}
-    .lang-card{
-      display:flex;align-items:center;gap:16px;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);padding:14px 18px;
-      transition:border-color var(--t);
-    }
-    .lang-card:hover{border-color:var(--border-g)}
-    .lang-flag{font-size:24px;width:36px;text-align:center}
-    .lang-name{font-weight:500;color:#fff;font-size:15px;margin-bottom:2px}
-    .lang-level{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase}
-    .lang-bar{flex:1;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-left:8px}
-    .lang-fill{height:100%;background:var(--gold);border-radius:2px}
-
-    /* ══════════════════════════════
-       EDUCATION
-    ══════════════════════════════ */
-    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .edu-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);padding:22px;
-      transition:border-color var(--t),transform var(--t);
-    }
-    .edu-card:hover{border-color:var(--border-g);transform:translateY(-3px)}
-    .edu-card.featured{border-color:var(--border-g);background:linear-gradient(135deg,var(--surface2) 0%,var(--surface) 100%)}
-    .edu-period{font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-    .edu-title{font-family:var(--font-disp);font-size:19px;font-weight:500;color:#fff;margin-bottom:4px;line-height:1.2}
-    .edu-place{font-size:13px;color:var(--muted)}
-
-    /* Courses */
-    .courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
-    .course-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);padding:16px 18px;
-      display:flex;align-items:flex-start;gap:12px;
-      transition:border-color var(--t),transform var(--t);
-    }
-    .course-card:hover{border-color:var(--border-g);transform:translateY(-2px)}
-    .course-icon{
-      width:32px;height:32px;flex-shrink:0;
-      background:var(--gold-dim);border:1px solid var(--border-g);
-      border-radius:7px;display:flex;align-items:center;justify-content:center;
-      color:var(--gold);
-    }
-    .course-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;line-height:1.3}
-    .course-place{font-family:var(--font-mono);font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
-
-    /* ══════════════════════════════
-       CONTACT
-    ══════════════════════════════ */
-    .contact-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-    .contact-items{display:flex;flex-direction:column;gap:12px}
-    .contact-item{
-      display:flex;align-items:center;gap:14px;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);padding:14px 18px;
-      transition:border-color var(--t),transform var(--t);
-    }
-    .contact-item:hover{border-color:var(--border-g);transform:translateX(4px)}
-    .contact-icon{
-      width:38px;height:38px;flex-shrink:0;
-      background:var(--gold-dim);border:1px solid var(--border-g);
-      border-radius:8px;display:flex;align-items:center;justify-content:center;
-      color:var(--gold);
-    }
-    .contact-label{font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
-    .contact-val{font-size:14px;color:var(--text);transition:color var(--t)}
-    a.contact-val:hover{color:var(--gold)}
-
-    .social-grid{display:flex;flex-direction:column;gap:10px}
-    .social-link{
-      display:flex;align-items:center;gap:14px;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r);padding:14px 18px;
-      transition:all var(--t);
-    }
-    .social-link:hover{border-color:var(--border-g);transform:translateX(4px);background:var(--gold-dim)}
-    .social-link-icon{
-      width:38px;height:38px;flex-shrink:0;border-radius:8px;
-      display:flex;align-items:center;justify-content:center;
-    }
-    .social-link-name{font-size:14px;font-weight:500;color:var(--text)}
-    .social-link-handle{font-size:12px;color:var(--muted)}
-    .social-link-arrow{margin-left:auto;color:var(--muted);transition:transform var(--t)}
-    .social-link:hover .social-link-arrow{transform:translateX(4px);color:var(--gold)}
-
-    /* ══════════════════════════════
-       FOOTER
-    ══════════════════════════════ */
-    footer{
-      padding:36px 0;text-align:center;
-      border-top:1px solid var(--border);
-    }
-    footer p{font-size:13px;color:var(--muted)}
-    footer strong{color:var(--gold)}
-
-    /* ══════════════════════════════
-       BACK TO TOP
-    ══════════════════════════════ */
-    .back-top{
-      position:fixed;bottom:28px;right:28px;
-      width:42px;height:42px;
-      background:var(--gold);color:#080b12;
-      border:none;border-radius:8px;
-      display:flex;align-items:center;justify-content:center;
-      z-index:990;opacity:0;pointer-events:none;
-      transform:translateY(10px);
-      transition:opacity var(--t),transform var(--t);
-      box-shadow:0 4px 16px var(--gold-glow);
-    }
-    .back-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
-    .back-top:hover{background:var(--gold2);transform:translateY(-3px)}
-
-    /* ══════════════════════════════
-       AOS
-    ══════════════════════════════ */
-    [data-aos]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    [data-aos="fade-right"]{transform:translateX(-24px)}
-    [data-aos="fade-left"]{transform:translateX(24px)}
-    [data-aos="zoom-in"]{transform:scale(.93)}
-    [data-aos].aos-in{opacity:1;transform:none}
-
-    /* ══════════════════════════════
-       SCROLL PROGRESS
-    ══════════════════════════════ */
-    .scroll-progress{
-      position:fixed;top:0;left:0;height:2px;
-      background:var(--gold);width:0%;z-index:1001;
-      transition:width .1s linear;
-    }
-
-    /* ══════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════ */
-    @media(max-width:1000px){
-      .hero-grid{grid-template-columns:1fr;gap:40px}
-      .profile-card{max-width:360px;margin:0 auto}
-      .about-grid{grid-template-columns:1fr}
-      .projects-grid{grid-template-columns:1fr 1fr}
-      .skills-layout{grid-template-columns:1fr}
-      .edu-grid{grid-template-columns:1fr}
-      .courses-grid{grid-template-columns:1fr 1fr}
-      .contact-grid{grid-template-columns:1fr}
-    }
-    @media(max-width:640px){
-      .hero-name{font-size:clamp(44px,12vw,64px)}
-      .projects-grid{grid-template-columns:1fr}
-      .courses-grid{grid-template-columns:1fr}
-      .about-stats{grid-template-columns:1fr 1fr}
-    }
-    :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
-  </style>
+@media(max-width:980px){.hgrid,.agrid,.congrid{grid-template-columns:1fr}.pgrid,.skgrid,.edgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.hname{font-size:clamp(42px,12vw,62px)}.pgrid,.skgrid,.edgrid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+<div id="sp"></div>
+<div class="lang"><a href="index.html"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> ES</a></div>
 
-<div class="scroll-progress" id="scrollProgress"></div>
-
-<!-- Language Switch -->
-<div class="lang-switch">
-  <a href="index.html">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-    ES
-  </a>
-</div>
-
-<!-- ══════════════════════════════
-     HERO
-══════════════════════════════ -->
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div class="hero-text">
-        <div class="hero-eyebrow" data-aos="fade-down">Portafolio — 2025</div>
-        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="80">
-          Ronny<br/><span>Feliz</span>
-        </h1>
-        <p class="hero-title" data-aos="fade-up" data-aos-delay="140">Ingeniero de Sistemas · Especialista Digital</p>
-        <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
-          Estudiante de Ingeniería en Sistemas en la UASD, especialista digital freelance, líder de una comunidad de 300+ estudiantes y creador de proyectos web desde Baní, República Dominicana.
-        </p>
-        <div class="hero-actions" data-aos="fade-up" data-aos-delay="260">
-          <a href="https://www.mediafire.com/folder/9zmxyk1fve023/CERTIFICATES" target="_blank" rel="noopener" class="btn-gold">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            Ver Certificados
-          </a>
-          <a href="https://github.com/ronnyfeliz" target="_blank" rel="noopener" class="btn-outline">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
-        </div>
-        <div class="hero-socials" data-aos="fade-up" data-aos-delay="320">
-          <a href="https://www.linkedin.com/in/ronnyfeliz2/" target="_blank" rel="noopener" class="hero-social" title="LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://github.com/ronnyfeliz" target="_blank" rel="noopener" class="hero-social" title="GitHub">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href="https://x.com/Swae05" target="_blank" rel="noopener" class="hero-social" title="X / Twitter">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/blxst_608/" target="_blank" rel="noopener" class="hero-social" title="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/bauer.rodriguez.5/" target="_blank" rel="noopener" class="hero-social" title="Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="profile-card" data-aos="fade-left" data-aos-delay="100">
-        <div class="profile-img-wrap">
-          <img src="Picture/Ronny Feliz Portrait 2.png" alt="Ronny Feliz — Systems Engineer" loading="eager"/>
-          <div class="profile-img-ring"></div>
-          <div class="profile-tags">
-            <span class="profile-tag">Bani, DO</span>
-            <span class="profile-tag">UASD</span>
-            <span class="profile-tag">B2 English</span>
-          </div>
-        </div>
-      </div>
-
+<div class="w">
+<div class="hgrid">
+  <div>
+    <div class="hey rv">Portafolio — 2025</div>
+    <h1 class="hname rv" style="transition-delay:.08s">Ronny<br><span>Feliz</span></h1>
+    <p class="hrole rv" style="transition-delay:.14s">Ingeniero de Sistemas · Especialista Digital</p>
+    <p class="hdesc rv" style="transition-delay:.2s">Estudiante de Ingeniería en Sistemas en la UASD, especialista digital freelance, líder de comunidad de 300+ estudiantes y creador de proyectos web desde Baní, República Dominicana.</p>
+    <div class="hbtns rv" style="transition-delay:.26s">
+      <a href="https://www.mediafire.com/folder/9zmxyk1fve023/CERTIFICATES" target="_blank" rel="noopener" class="btn-g"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Ver Certificados</a>
+      <a href="https://github.com/ronnyfeliz" target="_blank" rel="noopener" class="btn-o"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+    </div>
+    <div class="hsoc rv" style="transition-delay:.32s">
+      <a href="https://www.linkedin.com/in/ronnyfeliz2/" target="_blank" rel="noopener" class="sb" title="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://github.com/ronnyfeliz" target="_blank" rel="noopener" class="sb" title="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      <a href="https://x.com/Swae05" target="_blank" rel="noopener" class="sb" title="X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/blxst_608/" target="_blank" rel="noopener" class="sb" title="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://www.facebook.com/bauer.rodriguez.5/" target="_blank" rel="noopener" class="sb" title="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
     </div>
   </div>
+  <div class="rv rr">
+    <div class="pimg">
+      <img src="Picture/Ronny Feliz Portrait 2.png" alt="Ronny Feliz" loading="eager"/>
+      <div class="pring"></div>
+      <div class="ptags"><span class="ptag">Bani, DO</span><span class="ptag">UASD</span><span class="ptag">B2 English</span></div>
+    </div>
+  </div>
+</div>
+</div>
 </section>
-
 <div class="divider"></div>
 
-<!-- ══════════════════════════════
-     ABOUT
-══════════════════════════════ -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-eyebrow" data-aos="fade-up">Sobre Mí</div>
-    <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">Quién <span>Soy</span></h2>
-    <div class="about-grid">
-      <div data-aos="fade-right">
-        <p class="about-text">
-          Soy <strong>estudiante de Ingeniería en Sistemas en la UASD</strong>, impulsado por una genuina pasión por la tecnología, las herramientas digitales y el aprendizaje continuo. Mi perfil combina conocimiento técnico con sólidas habilidades de comunicación — soy bilingüe (Español / Inglés B2), adaptable y orientado a resolver problemas reales.
-        </p>
-        <p class="about-text">
-          Más allá de lo académico, he construido experiencia práctica a través del trabajo freelance, la gestión de comunidades, la creación de contenido y la colaboración en eventos. He liderado una <strong>comunidad de más de 300 estudiantes</strong>, desarrollado proyectos web publicados en línea y prestado servicios digitales que van desde diseño gráfico hasta soporte técnico.
-        </p>
-        <p class="about-text">
-          Me desenvuelvo en la intersección entre tecnología, creatividad y servicio — siempre buscando oportunidades para crecer, aportar y generar un impacto medible.
-        </p>
-        <div class="about-stats">
-          <div class="about-stat" data-aos="zoom-in" data-aos-delay="0">
-            <div class="about-stat-num">300+</div>
-            <div class="about-stat-label">Estudiantes en la comunidad</div>
-          </div>
-          <div class="about-stat" data-aos="zoom-in" data-aos-delay="80">
-            <div class="about-stat-num">3+</div>
-            <div class="about-stat-label">Proyectos web activos</div>
-          </div>
-          <div class="about-stat" data-aos="zoom-in" data-aos-delay="160">
-            <div class="about-stat-num">B2</div>
-            <div class="about-stat-label">Nivel de inglés</div>
-          </div>
-          <div class="about-stat" data-aos="zoom-in" data-aos-delay="240">
-            <div class="about-stat-num">5+</div>
-            <div class="about-stat-label">Cursos certificados</div>
-          </div>
-        </div>
+<!-- ABOUT -->
+<section class="sec" id="about">
+<div class="w">
+  <div class="ey rv">Sobre Mí</div>
+  <h2 class="h2 rv" style="transition-delay:.05s">Quién <span>Soy</span></h2>
+  <div class="agrid">
+    <div class="rv rl" style="transition-delay:.1s">
+      <p class="ap">Soy <strong>estudiante de Ingeniería en Sistemas en la UASD</strong>, impulsado por una genuina pasión por la tecnología y el aprendizaje continuo. Mi perfil combina conocimiento técnico con sólidas habilidades de comunicación — bilingüe (Español / Inglés B2), adaptable y orientado a resolver problemas.</p>
+      <p class="ap">He construido experiencia práctica a través del trabajo freelance, gestión de comunidades y eventos. Lideré una <strong>comunidad de 300+ estudiantes</strong>, desarrollé proyectos web y presté servicios digitales desde diseño gráfico hasta soporte técnico.</p>
+      <div class="sgrid">
+        <div class="scard rv" style="transition-delay:.1s"><div class="snum">300+</div><div class="slbl">Estudiantes en la comunidad</div></div>
+        <div class="scard rv" style="transition-delay:.17s"><div class="snum">50+</div><div class="slbl">Certificaciones</div></div>
+        <div class="scard rv" style="transition-delay:.24s"><div class="snum">B2</div><div class="slbl">Nivel de inglés</div></div>
+        <div class="scard rv" style="transition-delay:.31s"><div class="snum">3+</div><div class="slbl">Proyectos web</div></div>
       </div>
-
-      <div data-aos="fade-left" data-aos-delay="100">
-        <div class="info-card">
-          <div class="info-card-header">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span class="info-card-title">Información Personal</span>
-          </div>
-          <div class="info-items">
-            <div class="info-item">
-              <div class="info-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-              <div><div class="info-label">Ubicación</div><div class="info-val">Bani, Peravia — D.R.</div></div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-              <div><div class="info-label">Teléfono</div><a href="tel:+18094548891" class="info-val">809-454-8891</a></div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-              <div><div class="info-label">Email</div><a href="mailto:blxst608@gmail.com" class="info-val">blxst608@gmail.com</a></div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-              <div><div class="info-label">LinkedIn</div><a href="https://www.linkedin.com/in/ronnyfeliz2/" target="_blank" rel="noopener" class="info-val">linkedin.com/in/ronnyfeliz2</a></div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <div><div class="info-label">Objetivo</div><div class="info-val" style="font-size:12px;line-height:1.5">Obtener un rol dinámico donde pueda aprovechar mi experiencia técnica y pasión por la innovación para contribuir al éxito del equipo.</div></div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="rv rr" style="transition-delay:.15s">
+      <div class="icard">
+        <div class="ichead"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Información Personal</span></div>
+        <div class="irow"><div class="iico"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ilbl">Ubicación</div><div class="ival">Baní, Peravia — R.D.</div></div></div>
+        <div class="irow"><div class="iico"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="ilbl">Teléfono</div><a href="tel:+18094548891" class="ival">809-454-8891</a></div></div>
+        <div class="irow"><div class="iico"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ilbl">Correo</div><a href="mailto:blxst608@gmail.com" class="ival">blxst608@gmail.com</a></div></div>
+        <div class="irow"><div class="iico"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="ilbl">LinkedIn</div><a href="https://www.linkedin.com/in/ronnyfeliz2/" target="_blank" rel="noopener" class="ival">ronnyfeliz2</a></div></div>
+        <div class="irow"><div class="iico"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div><div><div class="ilbl">GitHub</div><a href="https://github.com/ronnyfeliz" target="_blank" rel="noopener" class="ival">ronnyfeliz</a></div></div>
       </div>
     </div>
   </div>
+</div>
 </section>
-
 <div class="divider"></div>
 
-<!-- ══════════════════════════════
-     EXPERIENCE
-══════════════════════════════ -->
-<section class="section" id="experience">
-  <div class="container">
-    <div class="section-eyebrow" data-aos="fade-up">Carrera</div>
-    <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">Experiencia <span>Profesional</span></h2>
-    <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Roles y colaboraciones que han forjado mi perfil profesional</p>
-
-    <div class="timeline">
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-period">2024 — Presente</div>
-          <div class="timeline-role">Especialista Digital Freelance</div>
-          <div class="timeline-company">Independent</div>
-          <div class="timeline-bullets">
-            <div class="timeline-bullet">Diseño gráfico — logos, banners, tarjetas de presentación y contenido digital</div>
-            <div class="timeline-bullet">Creación de CV y documentos profesionales</div>
-            <div class="timeline-bullet">Servicios de traducción español–inglés</div>
-            <div class="timeline-bullet">Soporte técnico, diagnóstico y solución de problemas en dispositivos</div>
-            <div class="timeline-bullet">Desarrollo web básico y edición de contenido para redes sociales</div>
-            <div class="timeline-bullet">Edición de fotos y video para redes sociales y YouTube (1,500+ suscriptores)</div>
-          </div>
-          <div class="timeline-tags">
-            <span class="timeline-tag">Design</span><span class="timeline-tag">Web Dev</span><span class="timeline-tag">Translation</span><span class="timeline-tag">Tech Support</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="60">
-        <div class="timeline-dot">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-period">Feb 2025 — Presente</div>
-          <div class="timeline-role">Gestor de Apoyo Estudiantil Virtual</div>
-          <div class="timeline-company">Proyecto Independiente</div>
-          <div class="timeline-bullets">
-            <div class="timeline-bullet">Administración de una comunidad de WhatsApp de 300+ estudiantes enfocada en el acceso educativo</div>
-            <div class="timeline-bullet">Asistencia a estudiantes en inscripción a cursos, carga de documentos y navegación en plataformas</div>
-            <div class="timeline-bullet">Compartiendo oportunidades de INFOTEP, UASD, CIF, CTC, Promipyme y DGII</div>
-            <div class="timeline-bullet">Implementación de formularios digitales para optimizar la recopilación y gestión de información</div>
-          </div>
-          <div class="timeline-tags">
-            <span class="timeline-tag">Gestión Comunitaria</span><span class="timeline-tag">Liderazgo</span><span class="timeline-tag">Digital Tools</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="80">
-        <div class="timeline-dot">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-period">Sep — Nov 2025</div>
-          <div class="timeline-role">Colaborador — Nivel Ampliado</div>
-          <div class="timeline-company">Feria Internacional del Libro, Santo Domingo</div>
-          <div class="timeline-bullets">
-            <div class="timeline-bullet">Promoción activa de eventos y actividades de la feria</div>
-            <div class="timeline-bullet">Apoyo en funciones asignadas; obtención de bonificaciones por rendimiento</div>
-          </div>
-          <div class="timeline-tags">
-            <span class="timeline-tag">Events</span><span class="timeline-tag">Promotion</span><span class="timeline-tag">Ventas</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-        <div class="timeline-dot">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-period">Dic 2023 — Dic 2024</div>
-          <div class="timeline-role">Recepcionista de Viajes</div>
-          <div class="timeline-company">Geraldo Transit</div>
-          <div class="timeline-bullets">
-            <div class="timeline-bullet">Gestión de alto volumen de llamadas entrantes con precisión y profesionalismo</div>
-            <div class="timeline-bullet">Registro y confirmación de datos de pasajeros con alta precisión</div>
-          </div>
-          <div class="timeline-tags">
-            <span class="timeline-tag">Atención al Cliente</span><span class="timeline-tag">Entrada de Datos</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="120">
-        <div class="timeline-dot">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div class="timeline-content">
-          <div class="timeline-period">Ene 2024</div>
-          <div class="timeline-role">Asistente Bilingüe / Intérprete</div>
-          <div class="timeline-company">Fralan SRL</div>
-          <div class="timeline-bullets">
-            <div class="timeline-bullet">Asistencia a estudiantes estadounidenses durante actividades benéficas en República Dominicana</div>
-            <div class="timeline-bullet">Interpretación simultánea español–inglés</div>
-          </div>
-          <div class="timeline-tags">
-            <span class="timeline-tag">Bilingual</span><span class="timeline-tag">Interpretación</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
+<!-- EXPERIENCE -->
+<section class="sec" id="experience">
+<div class="w">
+  <div class="ey rv">Carrera</div>
+  <h2 class="h2 rv" style="transition-delay:.05s">Experiencia <span>Profesional</span></h2>
+  <p class="sub rv" style="transition-delay:.1s">Roles y colaboraciones que han forjado mi perfil profesional</p>
+  <div class="tline">
+    <div class="titem rv"><div class="tdot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><div class="tbox"><div class="tper">2024 — Presente</div><div class="trole">Especialista Digital Freelance</div><div class="tco">Independiente</div><div class="tblist"><div class="tbul">Diseño gráfico: logos, banners, tarjetas y contenido digital</div><div class="tbul">Redacción de CV, documentos y apoyo académico</div><div class="tbul">Traducción español–inglés y soporte técnico</div><div class="tbul">Desarrollo web básico y edición de redes sociales</div><div class="tbul">Edición de fotos y video — YouTube con 1,500+ suscriptores</div></div><div class="ttags"><span class="tag">Design</span><span class="tag">Web Dev</span><span class="tag">Translation</span><span class="tag">Tech Support</span></div></div></div>
+    <div class="titem rv" style="transition-delay:.06s"><div class="tdot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="tbox"><div class="tper">Feb 2025 — Presente</div><div class="trole">Gestor de Apoyo Estudiantil Virtual</div><div class="tco">Independiente Project</div><div class="tblist"><div class="tbul">Administrador de una comunidad de WhatsApp de 300+ estudiantes enfocada en el acceso educativo</div><div class="tbul">Asistencia en inscripción a cursos, gestión de documentos y navegación en plataformas</div><div class="tbul">Difusión de oportunidades de INFOTEP, UASD, CIF, CTC, Promipyme y DGII</div></div><div class="ttags"><span class="tag">Community Mgmt</span><span class="tag">Liderazgo</span><span class="tag">Digital Tools</span></div></div></div>
+    <div class="titem rv" style="transition-delay:.08s"><div class="tdot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="tbox"><div class="tper">Nov 15–20, 2024 y Sep 27–30, 2025</div><div class="trole">Colaborador en Eventos</div><div class="tco">Feria Internacional del Libro, Santo Domingo</div><div class="tblist"><div class="tbul">Apoyo logístico y asistencia a autores y figuras públicas (2024)</div><div class="tbul">Promoción activa de eventos; obtención de bonificaciones en libros (2025)</div></div><div class="ttags"><span class="tag">Events</span><span class="tag">Promotion</span><span class="tag">Trabajo en Equipo</span></div></div></div>
+    <div class="titem rv" style="transition-delay:.1s"><div class="tdot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="tbox"><div class="tper">Dic 22, 2023 — Dic 23, 2024</div><div class="trole">Asistente en Confirmación de Pasajeros</div><div class="tco">Gerardo Transit</div><div class="tblist"><div class="tbul">Gestión de alto volumen de llamadas bajo presión</div><div class="tbul">Registro y confirmación de datos de pasajeros con precisión</div></div><div class="ttags"><span class="tag">Atención al Cliente</span><span class="tag">Data Entry</span></div></div></div>
+    <div class="titem rv" style="transition-delay:.12s"><div class="tdot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="tbox"><div class="tper">7 — 14 Ene 2024</div><div class="trole">Asistente Bilingüe / Traductor</div><div class="tco">Fralan Servicios Computarizados</div><div class="tblist"><div class="tbul">Asistencia a estudiantes estadounidenses en actividades benéficas en R.D.</div><div class="tbul">Traducción y apoyo en comunicación español–inglés</div></div><div class="ttags"><span class="tag">Bilingüe</span><span class="tag">Translation</span></div></div></div>
+    <div class="titem rv" style="transition-delay:.14s"><div class="tdot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"/></svg></div><div class="tbox"><div class="tper">18 — 23 Dic 2024</div><div class="trole">Asistente General / Servicio al Cliente</div><div class="tco">La Cafetería La Matica</div><div class="tblist"><div class="tbul">Organización y control de inventario</div><div class="tbul">Atención al cliente, limpieza y apoyo administrativo básico</div></div><div class="ttags"><span class="tag">Atención al Cliente</span><span class="tag">Inventory</span><span class="tag">Admin</span></div></div></div>
   </div>
+</div>
 </section>
-
 <div class="divider"></div>
 
-<!-- ══════════════════════════════
-     PROJECTS
-══════════════════════════════ -->
-<section class="section" id="projects" style="background:var(--bg2)">
-  <div class="container">
-    <div class="section-eyebrow" data-aos="fade-up">Proyectos</div>
-    <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">Proyectos <span>Independientes</span></h2>
-    <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Iniciativas personales construidas desde cero con usuarios reales e impacto real</p>
-
-    <div class="projects-grid">
-
-      <div class="project-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="project-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="project-title">Comunidad Educativa</div>
-        <div class="project-sub">Plataforma de Apoyo Académico</div>
-        <div class="project-desc">Comunidad activa de 300+ estudiantes. Ayudo a los miembros a inscribirse en cursos, gestionar documentos y acceder a oportunidades de INFOTEP, UASD, CIF, CTC, Promipyme y DGII. La mayoría han obtenido múltiples certificados gracias a esta iniciativa.</div>
-        <div class="timeline-tags" style="margin-top:0">
-          <span class="timeline-tag">Comunidad</span><span class="timeline-tag">Liderazgo</span><span class="timeline-tag">Educación</span>
-        </div>
-      </div>
-
-      <div class="project-card" data-aos="fade-up" data-aos-delay="80">
-        <div class="project-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <div class="project-title">The Bat Flip Show</div>
-        <div class="project-sub">Blog Deportivo · 2025</div>
-        <div class="project-desc">Blog deportivo digital enfocado en análisis de béisbol, noticias y construcción de comunidad. Presencia multiplataforma con canales activos en redes sociales y audiencia en crecimiento.</div>
-        <div class="timeline-tags" style="margin-top:0">
-          <span class="timeline-tag">Contenido</span><span class="timeline-tag">Béisbol</span><span class="timeline-tag">Blog</span>
-        </div>
-        <a href="https://thebatflipshow.blogspot.com/" target="_blank" rel="noopener" class="project-link">
-          Ver Proyecto
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-
-      <div class="project-card" data-aos="fade-up" data-aos-delay="160">
-        <div class="project-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <div class="project-title">Punto Nemo Films</div>
-        <div class="project-sub">Cinemateca Virtual</div>
-        <div class="project-desc">Biblioteca digital curada de películas difíciles de encontrar, alojada en Neocities. Su nombre hace referencia al "Punto Nemo" — el lugar más inaccesible de la Tierra — simbolizando películas raras difíciles de encontrar en línea.</div>
-        <div class="timeline-tags" style="margin-top:0">
-          <span class="timeline-tag">Curación</span><span class="timeline-tag">Web Hosting</span><span class="timeline-tag">Research</span>
-        </div>
-        <a href="https://thebatflipshow1.neocities.org/movie_database/" target="_blank" rel="noopener" class="project-link">
-          Ver Proyecto
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-
-    </div>
+<!-- PROJECTS -->
+<section class="sec" id="projects" style="background:var(--bg2)">
+<div class="w">
+  <div class="ey rv">Proyectos</div>
+  <h2 class="h2 rv" style="transition-delay:.05s">Independiente <span>Projects</span></h2>
+  <p class="sub rv" style="transition-delay:.1s">Iniciativas personales con usuarios reales e impacto real</p>
+  <div class="pgrid">
+    <div class="pcard rv"><div class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="ptit">Comunidad Educativa</div><div class="psub">Apoyo Académico · 2024–Presente</div><div class="pdesc">Comunidad activa de 300+ estudiantes. Apoyo en inscripción a cursos y difusión de oportunidades. La mayoría han obtenido múltiples certificaciones.</div><div class="ttags"><span class="tag">Community</span><span class="tag">Liderazgo</span><span class="tag">Education</span></div></div>
+    <div class="pcard rv" style="transition-delay:.08s"><div class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="ptit">The Bat Flip Show</div><div class="psub">Blog Deportivo · 2025</div><div class="pdesc">Blog deportivo digital enfocado en béisbol, noticias y comunidad. Presencia multiplataforma y audiencia en crecimiento.</div><div class="ttags"><span class="tag">Content</span><span class="tag">Baseball</span><span class="tag">Blog</span></div><a href="https://thebatflipshow.blogspot.com/" target="_blank" rel="noopener" class="plink">Ver Proyecto <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
+    <div class="pcard rv" style="transition-delay:.16s"><div class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="ptit">Punto Nemo Films</div><div class="psub">Cinemateca Virtual</div><div class="pdesc">Biblioteca digital curada de películas difíciles de encontrar en Neocities. Nombrada por el "Punto Nemo" — el lugar más inaccesible de la Tierra.</div><div class="ttags"><span class="tag">Curation</span><span class="tag">Web</span><span class="tag">Research</span></div><a href="https://thebatflipshow1.neocities.org/movie_database/" target="_blank" rel="noopener" class="plink">Ver Proyecto <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
   </div>
+</div>
 </section>
-
 <div class="divider"></div>
 
-<!-- ══════════════════════════════
-     SKILLS
-══════════════════════════════ -->
-<section class="section" id="skills">
-  <div class="container">
-    <div class="section-eyebrow" data-aos="fade-up">Competencias</div>
-    <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">Habilidades &amp; <span>Herramientas</span></h2>
-    <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Competencias técnicas y profesionales desarrolladas a través de la experiencia</p>
-
-    <div class="skills-layout">
-      <div data-aos="fade-right">
-        <div class="skills-group-title">Habilidades Técnicas</div>
-        <div class="skill-bars">
-          <div class="skill-bar-item">
-            <div class="skill-bar-top"><span class="skill-bar-label">Suite Microsoft Office</span><span class="skill-bar-pct">90%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top"><span class="skill-bar-label">Diseño Gráfico (Photoshop / Canva)</span><span class="skill-bar-pct">85%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top"><span class="skill-bar-label">HTML / CSS / Desarrollo Web</span><span class="skill-bar-pct">75%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:75%"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top"><span class="skill-bar-label">Digital Marketing / Gestión Comunitaria</span><span class="skill-bar-pct">80%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top"><span class="skill-bar-label">Edición de Video y Fotos</span><span class="skill-bar-pct">78%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:78%"></div></div>
-          </div>
-        </div>
-
-        <div class="skills-group-title">Idiomas</div>
-        <div class="lang-cards">
-          <div class="lang-card">
-            <div class="lang-flag">🇩🇴</div>
-            <div><div class="lang-name">Spanish</div><div class="lang-level">Nativo</div></div>
-            <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-          </div>
-          <div class="lang-card">
-            <div class="lang-flag">🇺🇸</div>
-            <div><div class="lang-name">English</div><div class="lang-level">B2 — Intermedio Alto</div></div>
-            <div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div>
-          </div>
-          <div class="lang-card">
-            <div class="lang-flag">🇧🇷</div>
-            <div><div class="lang-name">Portuguese</div><div class="lang-level">A2 — Elemental</div></div>
-            <div class="lang-bar"><div class="lang-fill" style="width:25%"></div></div>
-          </div>
-        </div>
+<!-- SKILLS -->
+<section class="sec" id="skills">
+<div class="w">
+  <div class="ey rv">Competencias</div>
+  <h2 class="h2 rv" style="transition-delay:.05s">Habilidades &amp; <span>Herramientas</span></h2>
+  <p class="sub rv" style="transition-delay:.1s">Competencias técnicas y profesionales desarrolladas a través de la experiencia</p>
+  <div class="skgrid">
+    <div class="rv rl" style="transition-delay:.1s">
+      <div class="sklbl">Habilidades Técnicas</div>
+      <div class="barlist">
+        <div><div class="bartop"><span class="barn">Suite Microsoft Office</span><span class="barp">90%</span></div><div class="bartrack"><div class="barfill" data-w="90%"></div></div></div>
+        <div><div class="bartop"><span class="barn">Diseño Gráfico (Photoshop / Canva)</span><span class="barp">85%</span></div><div class="bartrack"><div class="barfill" data-w="85%"></div></div></div>
+        <div><div class="bartop"><span class="barn">HTML / CSS / Desarrollo Web</span><span class="barp">75%</span></div><div class="bartrack"><div class="barfill" data-w="75%"></div></div></div>
+        <div><div class="bartop"><span class="barn">Marketing Digital / Gestión de Comunidad</span><span class="barp">80%</span></div><div class="bartrack"><div class="barfill" data-w="80%"></div></div></div>
+        <div><div class="bartop"><span class="barn">Edición de Video y Fotos</span><span class="barp">78%</span></div><div class="bartrack"><div class="barfill" data-w="78%"></div></div></div>
       </div>
-
-      <div data-aos="fade-left" data-aos-delay="80">
-        <div class="skills-group-title">Habilidades Profesionales</div>
-        <div class="skill-pills">
-          <span class="skill-pill">Atención al Cliente</span>
-          <span class="skill-pill">Liderazgo</span>
-          <span class="skill-pill">Resolución de Problemas</span>
-          <span class="skill-pill">Comunicación Efectiva</span>
-          <span class="skill-pill">Gestión del Tiempo</span>
-          <span class="skill-pill">Trabajo en Equipo</span>
-          <span class="skill-pill">Adaptabilidad</span>
-          <span class="skill-pill">Pensamiento Analítico</span>
-          <span class="skill-pill">Ventas</span>
-          <span class="skill-pill">Gestión Documental</span>
-          <span class="skill-pill">Optimización de Procesos</span>
-          <span class="skill-pill">Contenido Creation</span>
-          <span class="skill-pill">Organización de Eventos</span>
-          <span class="skill-pill">Bilingual Interpretación</span>
-          <span class="skill-pill">Atención al Detalle</span>
-          <span class="skill-pill">Gestión de Biblioteca Digital</span>
-        </div>
+      <div class="sklbl">Idiomas</div>
+      <div class="langlist">
+        <div class="langrow"><div class="lflag">🇩🇴</div><div><div class="lname">Spanish</div><div class="llvl">Nativo</div></div><div class="lbar"><div class="lfill" style="width:100%"></div></div></div>
+        <div class="langrow"><div class="lflag">🇺🇸</div><div><div class="lname">English</div><div class="llvl">B2 — Intermedio Alto</div></div><div class="lbar"><div class="lfill" style="width:72%"></div></div></div>
+        <div class="langrow"><div class="lflag">🇧🇷</div><div><div class="lname">Portuguese</div><div class="llvl">A2 — Elemental</div></div><div class="lbar"><div class="lfill" style="width:25%"></div></div></div>
       </div>
     </div>
+    <div class="rv rr" style="transition-delay:.15s">
+      <div class="sklbl">Habilidades Profesionales</div>
+      <div class="pills"><span class="pill">Atención al Cliente</span><span class="pill">Liderazgo</span><span class="pill">Resolución de Problemas</span><span class="pill">Comunicación</span><span class="pill">Gestión del Tiempo</span><span class="pill">Trabajo en Equipo</span><span class="pill">Adaptabilidad</span><span class="pill">Pensamiento Analítico</span><span class="pill">Ventas</span><span class="pill">Gestión Documental</span><span class="pill">Creación de Contenido</span><span class="pill">Organización de Eventos</span><span class="pill">Bilingüe</span><span class="pill">Atención al Detalle</span></div>
+    </div>
   </div>
+</div>
 </section>
-
 <div class="divider"></div>
 
-<!-- ══════════════════════════════
-     EDUCATION
-══════════════════════════════ -->
-<section class="section" id="education" style="background:var(--bg2)">
-  <div class="container">
-    <div class="section-eyebrow" data-aos="fade-up">Formación</div>
-    <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">Educación &amp; <span>Training</span></h2>
-    <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Formación académica y certificaciones complementarias</p>
+<!-- EDUCATION -->
+<section class="sec" id="education" style="background:var(--bg2)">
+<div class="w">
+  <div class="ey rv">Formación</div>
+  <h2 class="h2 rv" style="transition-delay:.05s">Educación &amp; <span>Formación</span></h2>
+  <p class="sub rv" style="transition-delay:.1s">Formación académica y 50+ certificaciones complementarias</p>
+  <div class="edgrid rv" style="transition-delay:.12s">
+    <div class="edcard feat"><div class="edper">2023 — Present</div><div class="edtit">Ingeniería en Sistemas</div><div class="edpl">Universidad Autónoma de Santo Domingo (UASD)</div></div>
+    <div class="edcard"><div class="edper">2023</div><div class="edtit">English Immersion Program (EIP)</div><div class="edpl">MESCYT</div></div>
+    <div class="edcard"><div class="edper">2017 — 2021</div><div class="edtit">Educación Secundaria</div><div class="edpl">Colegio MATRISA / San José</div></div>
+    <div class="edcard"><div class="edper">2007 — 2017</div><div class="edtit">Educación Primaria</div><div class="edpl">Colegio Las Gaviotas / Socorro Jesús Los Pequeñines</div></div>
+  </div>
 
-    <div class="edu-grid" data-aos="fade-up" data-aos-delay="120">
-      <div class="edu-card featured">
-        <div class="edu-period">2023 — Present</div>
-        <div class="edu-title">Ingeniería en Sistemas</div>
-        <div class="edu-place">Universidad Autónoma de Santo Domingo (UASD) — Santo Domingo, D.N.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-period">2023</div>
-        <div class="edu-title">Programa de Inmersión en Inglés (EIP)</div>
-        <div class="edu-place">MESCYT</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-period">2017 — 2021</div>
-        <div class="edu-title">Secondary Educación</div>
-        <div class="edu-place">Colegio MATRISA / San José</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-period">2007 — 2017</div>
-        <div class="edu-title">Primary Educación</div>
-        <div class="edu-place">Colegio Las Gaviotas / Socorro Jesús Los Pequeñines</div>
-      </div>
-    </div>
+  <div style="margin-top:52px">
+    <div class="ey rv" style="margin-bottom:10px">Certificaciones</div>
+    <h3 class="rv" style="font-family:var(--fd);font-size:26px;color:#fff;font-weight:500;margin-bottom:6px;transition-delay:.04s">Cursos &amp; <span style="color:var(--gold)">Certificados</span></h3>
+    <p class="rv" style="font-size:13.5px;color:var(--muted);margin-bottom:28px;transition-delay:.08s">50+ certificaciones · <a href="https://www.mediafire.com/folder/9zmxyk1fve023/CERTIFICATES" target="_blank" rel="noopener" style="color:var(--gold)">Ver todos →</a></p>
+    <div class="accwrap rv" style="transition-delay:.1s">
 
-    <!-- Courses -->
-    <div style="margin-top:52px">
-      <div class="section-eyebrow" data-aos="fade-up" style="margin-bottom:12px">Certificaciones</div>
-      <h3 style="font-family:var(--font-disp);font-size:28px;color:#fff;font-weight:500;margin-bottom:8px" data-aos="fade-up" data-aos-delay="40">Complementary <span style="color:var(--gold)">Courses</span></h3>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:32px" data-aos="fade-up" data-aos-delay="80">
-        <a href="https://www.mediafire.com/folder/9zmxyk1fve023/CERTIFICATES" target="_blank" rel="noopener" style="color:var(--gold)">Ver todos los certificados →</a>
-      </p>
-      <div class="courses-grid">
-        <div class="course-card" data-aos="zoom-in" data-aos-delay="0">
-          <div class="course-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div><div class="course-title">Asistente en Ciberseguridad</div><div class="course-place">INFOTEP · 2023</div></div>
-        </div>
-        <div class="course-card" data-aos="zoom-in" data-aos-delay="60">
-          <div class="course-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div><div class="course-title">Gestión de Software de Oficina</div><div class="course-place">INFOTEP · 2024</div></div>
-        </div>
-        <div class="course-card" data-aos="zoom-in" data-aos-delay="120">
-          <div class="course-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-          <div><div class="course-title">Comunidad Manager — Digital Marketing</div><div class="course-place">INFOTEP · 2024</div></div>
-        </div>
-        <div class="course-card" data-aos="zoom-in" data-aos-delay="180">
-          <div class="course-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <div><div class="course-title">Ventas Technician</div><div class="course-place">INFOTEP · 2024</div></div>
-        </div>
-        <div class="course-card" data-aos="zoom-in" data-aos-delay="240">
-          <div class="course-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div><div class="course-title">Inglés Técnico</div><div class="course-place">Fralan SRL · 2019–2023</div></div>
-        </div>
-        <div class="course-card" data-aos="zoom-in" data-aos-delay="300">
-          <div class="course-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-          <div><div class="course-title">Programa de Inmersión en Inglés</div><div class="course-place">MESCYT · 2023</div></div>
-        </div>
+      <div class="accitem">
+        <button class="accbtn" aria-expanded="false"><div class="accbtnl"><div class="accico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><div class="accname">TI &amp; Tecnología</div><div class="acccnt">20 certificados</div></div></div><svg class="accarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accbody"><div class="accinner">
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Curso PHP — UASD — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Curso Python — UASD — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Desarrollo UX/UI — UASD — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Diseño de Páginas Web, CSS y JavaScript — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Programación Web — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Cloud Computing — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Conceptos Básicos de Hardware — Cisco — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Conceptos Básicos de Hardware (renovado) — Cisco — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Fundamentos de IA con IBM SkillsBuild — Cisco — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Ciencia de Datos — Talento Digital — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Introducción a Redes de Datos — CTC — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Introducción a Cisco Packet Tracer — CTC — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Desarrollo Web Moderno con IA (Webinar) — Univ. La Salle — 2026</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Full Stack (Webinar) — Dev Senior Code — 2026</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Excel with AI Proyectosshop (Webinar) — EDUTEC — 2026</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Administrador de Servidores — Capacítate para el Empleo — 2026</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">IA para Principiantes — HP Life — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Virtual Home Office — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Remote Proyectos Planning &amp; Supervision — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Herramientas Digitales para Emprendedores (Webinar) — PromiPyme — 2025</span></div>
+        </div></div>
       </div>
+
+      <div class="accitem">
+        <button class="accbtn" aria-expanded="false"><div class="accbtnl"><div class="accico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="accname">Ciberseguridad</div><div class="acccnt">5 certificados</div></div></div><svg class="accarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accbody"><div class="accinner">
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Ciberseguridad Assistant — INFOTEP — 2023</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Introduction to Ciberseguridad — Cisco — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Introduction to Ciberseguridad — CTC — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Ciberseguridad for SMEs (Webinar) — ADOPEM — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Carrera in Data (Webinar) — INFOTEP — 2025</span></div>
+        </div></div>
+      </div>
+
+      <div class="accitem">
+        <button class="accbtn" aria-expanded="false"><div class="accbtnl"><div class="accico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="accname">Ofimática y Productividad</div><div class="acccnt">17 certificados</div></div></div><svg class="accarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accbody"><div class="accinner">
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Operaciones Básicas de Programas de Oficina — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Prácticas Ofimáticas — Capacítate para el Empleo — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Aplicaciones Ofimáticas — CTC — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Excel Básico — CTC — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">PowerPoint — CTC — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Paquete de Oficina — CTC — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Word Básico — CTC — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Microsoft Excel Avanzado — CIF — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Microsoft Excel Básico — CIF — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Microsoft PowerPoint — CIF — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Microsoft Word Básico — CIF — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Uso de Office 365 para Emprendedores y PYMES (Webinar) — PromiPyme — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Presentación de Datos — HP Life — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Presentaciones Efectivas — HP Life — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Presentaciones Efectivas — CTC — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Ortografía y Redacción — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Speed Reading Proyectosshop (Webinar) — 2023</span></div>
+        </div></div>
+      </div>
+
+      <div class="accitem">
+        <button class="accbtn" aria-expanded="false"><div class="accbtnl"><div class="accico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="accname">Marketing y Publicidad Digital</div><div class="acccnt">12 certificados</div></div></div><svg class="accarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accbody"><div class="accinner">
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Community Manager y Marketing Digital — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Herramientas de Marketing Digital — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Marketing Digital para Emprendedores — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Publicidad Digital — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Manejo de Medios Sociales — CTC — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Marketing de Medios Sociales — HP Life — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Plan de Marketing para Emprendedores (Webinar) — ADOPEM — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Creación de Contenido para Redes Sociales — Canva (Webinar) — ADOPEM — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Marketing Digital (Webinar) — ADOPEM — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Diplomado de Mercadeo y Ventas — PromiPyme — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Manejo de Inventarios — CIF — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Liderazgo Empresarial (Webinar) — ADOPEM — 2025</span></div>
+        </div></div>
+      </div>
+
+      <div class="accitem">
+        <button class="accbtn" aria-expanded="false"><div class="accbtnl"><div class="accico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><div class="accname">Ventas y Atención al Cliente</div><div class="acccnt">11 certificados</div></div></div><svg class="accarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accbody"><div class="accinner">
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Vendedor Auxiliar — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Vendedor Externo — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Visitador Médico — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Técnicas de Ventas en Plataformas Digitales (Webinar) — ADOPEM — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Ventas en Línea — HP Life — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Excelencia en Servicio al Cliente (Webinar) — ADOPEM — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Servicio al Cliente para Pymes (Webinar) — PromiPyme — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Customer Experience (CX) (Webinar) — Neuni College — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Servicios Secretariales y Recepción — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Recepción Hotelera — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Caja Bancaria y Comercial — INFOTEP — 2025</span></div>
+        </div></div>
+      </div>
+
+      <div class="accitem">
+        <button class="accbtn" aria-expanded="false"><div class="accbtnl"><div class="accico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><div class="accname">Emprendimiento y Finanzas</div><div class="acccnt">9 certificados</div></div></div><svg class="accarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accbody"><div class="accinner">
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Emprendimiento para PYMES (IMESUN) — INFOTEP — 2024</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Emprendimiento con Metodología IMESUN-OIT — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Emprendimiento Digital — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Gestión Financiera para Emprendedores — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Servicios Auxiliares de Contabilidad — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Auxiliar de Contabilidad Tributaria — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Webinar Obligaciones Fiscales Empresariales — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Financial Education Proyectosshop (Webinar) — PromiPyme — 2026</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Innovación y Emprendimiento para Pymes (Webinar) — PromiPyme — 2025</span></div>
+        </div></div>
+      </div>
+
+      <div class="accitem">
+        <button class="accbtn" aria-expanded="false"><div class="accbtnl"><div class="accico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="accname">Idiomas</div><div class="acccnt">4 certificados</div></div></div><svg class="accarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="accbody"><div class="accinner">
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Inglés Técnico — Fralan SRL — 2019–2023</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Inglés por Inmersión (EIP) — MESCYT — 2023</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Inglés Básico — INFOTEP — 2025</span></div>
+          <div class="accrow"><span class="accdot"></span><span class="acctxt">Inglés Intermedio — INFOTEP — 2025</span></div>
+        </div></div>
+      </div>
+
     </div>
   </div>
+</div>
 </section>
-
 <div class="divider"></div>
 
-<!-- ══════════════════════════════
-     CONTACT
-══════════════════════════════ -->
-<section class="section contact-section" id="contact">
-  <div class="container">
-    <div class="section-eyebrow" data-aos="fade-up">Contacto</div>
-    <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">Contacto &amp; <span>Redes</span></h2>
-    <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Abierto a oportunidades, colaboraciones y conversaciones</p>
-
-    <div class="contact-grid" data-aos="fade-up" data-aos-delay="120">
-      <div>
-        <div class="contact-items">
-          <div class="contact-item">
-            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div><div class="contact-label">Email</div><a href="mailto:blxst608@gmail.com" class="contact-val">blxst608@gmail.com</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <div><div class="contact-label">Teléfono / WhatsApp</div><a href="https://wa.me/18094548891" target="_blank" rel="noopener" class="contact-val">809-454-8891</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><div class="contact-label">Ubicación</div><div class="contact-val">Bani, Peravia — Dominican Republic</div></div>
-          </div>
-          <a href="https://www.linkedin.com/in/ronnyfeliz2/" target="_blank" rel="noopener" class="contact-item" style="display:flex">
-            <div class="contact-icon" style="color:var(--gold)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-            <div><div class="contact-label">LinkedIn</div><div class="contact-val">linkedin.com/in/ronnyfeliz2</div></div>
-          </a>
-          <a href="https://github.com/ronnyfeliz" target="_blank" rel="noopener" class="contact-item" style="display:flex">
-            <div class="contact-icon" style="color:var(--gold)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></div>
-            <div><div class="contact-label">GitHub</div><div class="contact-val">github.com/ronnyfeliz</div></div>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="social-grid">
-          <a href="https://x.com/Swae05" target="_blank" rel="noopener" class="social-link">
-            <div class="social-link-icon" style="background:rgba(255,255,255,.05)"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
-            <div><div class="social-link-name">X (Twitter)</div><div class="social-link-handle">@Swae05</div></div>
-            <svg class="social-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="https://www.instagram.com/blxst_608/" target="_blank" rel="noopener" class="social-link">
-            <div class="social-link-icon" style="background:rgba(225,48,108,.1)"><svg viewBox="0 0 24 24" fill="#e1306c" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
-            <div><div class="social-link-name">Instagram</div><div class="social-link-handle">@blxst_608</div></div>
-            <svg class="social-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="https://www.facebook.com/bauer.rodriguez.5/" target="_blank" rel="noopener" class="social-link">
-            <div class="social-link-icon" style="background:rgba(24,119,242,.1)"><svg viewBox="0 0 24 24" fill="#1877f2" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
-            <div><div class="social-link-name">Facebook</div><div class="social-link-handle">bauer.rodriguez.5</div></div>
-            <svg class="social-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-      </div>
+<!-- CONTACT -->
+<section class="sec consec" id="contact">
+<div class="w">
+  <div class="ey rv">Contacto</div>
+  <h2 class="h2 rv" style="transition-delay:.05s">Contacto &amp; <span>Redes</span></h2>
+  <p class="sub rv" style="transition-delay:.1s">Abierto a oportunidades, colaboraciones y conversaciones</p>
+  <div class="congrid rv" style="transition-delay:.12s">
+    <div class="conitems">
+      <a href="mailto:blxst608@gmail.com" class="conitem"><div class="conico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="conlbl">Correo</div><div class="conval">blxst608@gmail.com</div></div></a>
+      <a href="https://wa.me/18094548891" target="_blank" rel="noopener" class="conitem"><div class="conico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="conlbl">WhatsApp</div><div class="conval">809-454-8891</div></div></a>
+      <div class="conitem"><div class="conico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="conlbl">Ubicación</div><div class="conval">Baní, Peravia — R.D.</div></div></div>
+      <a href="https://www.linkedin.com/in/ronnyfeliz2/" target="_blank" rel="noopener" class="conitem"><div class="conico"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div><div class="conlbl">LinkedIn</div><div class="conval">linkedin.com/in/ronnyfeliz2</div></div></a>
+      <a href="https://github.com/ronnyfeliz" target="_blank" rel="noopener" class="conitem"><div class="conico"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></div><div><div class="conlbl">GitHub</div><div class="conval">github.com/ronnyfeliz</div></div></a>
+    </div>
+    <div class="soclinks">
+      <a href="https://x.com/Swae05" target="_blank" rel="noopener" class="soclink"><div class="socico" style="background:rgba(255,255,255,.05)"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div><div><div class="socname">X (Twitter)</div><div class="sochandle">@Swae05</div></div><svg class="socarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="https://www.instagram.com/blxst_608/" target="_blank" rel="noopener" class="soclink"><div class="socico" style="background:rgba(225,48,108,.1)"><svg viewBox="0 0 24 24" fill="#e1306c" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div><div><div class="socname">Instagram</div><div class="sochandle">@blxst_608</div></div><svg class="socarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="https://www.facebook.com/bauer.rodriguez.5/" target="_blank" rel="noopener" class="soclink"><div class="socico" style="background:rgba(24,119,242,.1)"><svg viewBox="0 0 24 24" fill="#1877f2" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div><div><div class="socname">Facebook</div><div class="sochandle">bauer.rodriguez.5</div></div><svg class="socarr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
+</div>
 </section>
 
-<!-- ══════════════════════════════
-     FOOTER
-══════════════════════════════ -->
-<footer>
-  <div class="container">
-    <p>© <span id="yr"></span> <strong>Ronny Feliz</strong> — Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-<button class="back-top" id="backTop" aria-label="Back to top">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
+<footer><div class="w"><p>© <span id="yr"></span> <strong>Ronny Feliz</strong> — Todos los derechos reservados. Construido con HTML · CSS · JS</p></div></footer>
+<button id="bt" aria-label="Back to top"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></button>
 
 <script>
-'use strict';
+(function(){
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-// Year
-document.getElementById('yr').textContenido = new Date().getFullYear();
+  // Scroll progress
+  var sp = document.getElementById('sp');
+  window.addEventListener('scroll', function(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if(sp && max > 0) sp.style.width = (window.scrollY/max*100)+'%';
+  },{passive:true});
 
-// Scroll progress
-const prog = document.getElementById('scrollProgress');
-window.addEventListener('scroll', () => {
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  prog.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
-}, { passive: true });
+  // Back to top
+  var bt = document.getElementById('bt');
+  window.addEventListener('scroll', function(){
+    if(bt) bt.classList.toggle('on', window.scrollY > 400);
+  },{passive:true});
+  if(bt) bt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
 
-// Back to top
-const bt = document.getElementById('backTop');
-window.addEventListener('scroll', () => bt.classList.toggle('visible', window.scrollY > 400), { passive: true });
-bt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  // Reveal on scroll
+  function reveal(){
+    document.querySelectorAll('.rv:not(.go)').forEach(function(el){
+      if(el.getBoundingClientRect().top < window.innerHeight - 40){
+        el.classList.add('go');
+      }
+    });
+  }
+  window.addEventListener('scroll', reveal, {passive:true});
+  reveal();
 
-// AOS
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const d = parseInt(e.target.getAttribute('data-aos-delay') || 0);
-      setTimeout(() => e.target.classList.add('aos-in'), d);
-      obs.unobserve(e.target);
-    }
+  // Skill bars
+  function bars(){
+    document.querySelectorAll('.barfill').forEach(function(b){
+      if(!b.style.width || b.style.width==='0px' || b.style.width==='0%'){
+        if(b.getBoundingClientRect().top < window.innerHeight){
+          b.style.width = b.getAttribute('data-w');
+        }
+      }
+    });
+  }
+  window.addEventListener('scroll', bars, {passive:true});
+  bars();
+
+  // Accordion
+  document.querySelectorAll('.accbtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = this.closest('.accitem');
+      var open = item.classList.contains('open');
+      item.classList.toggle('open',!open);
+      this.setAttribute('aria-expanded', String(!open));
+    });
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('[data-aos]').forEach(el => obs.observe(el));
 
-// Skill bars animate on visible
-const sObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.skill-bar-fill').forEach(f => f.classList.add('animated'));
-      sObs.unobserve(e.target);
-    }
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t = document.querySelector(this.getAttribute('href'));
+      if(!t) return;
+      e.preventDefault();
+      window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-60,behavior:'smooth'});
+    });
   });
-}, { threshold: 0.3 });
-document.querySelectorAll('.skill-bars').forEach(el => sObs.observe(el));
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (!t) return;
-    e.preventDefault();
-    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
-  });
-});
+})();
 </script>
 </body>
 </html>
